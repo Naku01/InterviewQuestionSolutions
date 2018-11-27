@@ -34,3 +34,25 @@ linkedListPartition(LinkedListNode node, int x){
     beforeEnd.next = afterStart;
     return beforeStart;
 }
+
+
+*****************************************************************
+
+LinkedListNode  partition(LinkedListNode node){
+  LinkedListNode head = node;
+  LinkedListNode tail = node;
+  
+  while(node != null){
+    LinkedListNode next = node.next;
+    if(node.data < x){
+      node.next = head ;
+      head = node;
+    }else{
+      tail.next = node;
+      tail = node;
+    }
+    node = next;
+  }
+  tail.next = null;
+  retun head;
+}
