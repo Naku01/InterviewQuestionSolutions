@@ -1,6 +1,6 @@
 boolean deleteNode(LinkedListNode n){
 if (n== null || n.next == null){
-return false;
+  return false;
 }
 LinkedListNode next = n.next;
 n.data = next.data;
