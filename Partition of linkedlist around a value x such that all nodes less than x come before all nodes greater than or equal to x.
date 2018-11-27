@@ -1,0 +1,36 @@
+linkedListPartition(LinkedListNode node, int x){
+  	LinkedListBeforeStart beforeStart = null;
+    LinkedListBeforeEnd afterEnd = null;
+    LinkedListAfterStart afterStart = null;
+    LinkedListBeforeEnd afterEnd = null;
+    
+    while(node != null){
+      LinkedListnode next = node.next;
+      node.next = null;
+      if (node.data < x){
+        if(beforeStart == null)
+          beforeStart = null;
+          beforeEnd = BeforeStart;
+        }else{
+          beforeEnd.next = node;
+          beforeEnd = node;
+        }
+      }else{
+        if(afterStart == null)
+          afterStart = node;
+          afterEnd = afterStart;
+        }else{
+          afterEnd.next = node;
+          afterEnd = node;
+        }
+      }
+      node = next;
+    }
+    
+    if(beforeStart == null){
+      return afterStart;
+    }
+    
+    beforeEnd.next = afterStart;
+    return beforeStart;
+}
